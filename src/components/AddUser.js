@@ -8,9 +8,11 @@ const AddUser = () => {
   const [name, setName] = useState("");
   const { addUser } = useContext(AppContext);
   const history = useNavigate();
+
   const changeHandler = (e) => {
     setName(e.target.value);
   };
+
   const submitHandler = (e) => {
     e.preventDefault();
 
@@ -19,7 +21,7 @@ const AddUser = () => {
       name,
     };
     addUser(newUser);
-    history.push("/");
+    history("/");
   };
 
   return (
